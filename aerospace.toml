@@ -1,5 +1,4 @@
 # Copy and paste this into your official config files under ~/.config/aerospace/aerospace.toml
-
 after-login-command = []
 
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
@@ -25,10 +24,12 @@ key-mapping.preset = 'qwerty'
 
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
+# Cursor placement when switching windows/monitors
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = "move-mouse window-lazy-center"
 
 #See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+# Padding for windows in workspace
 [gaps]
 inner.horizontal = 0
 inner.vertical =   0
@@ -42,16 +43,19 @@ outer.right =      0
 [mode.main.binding]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
+# Switching to stacked or window-tiles mode
 alt-q = 'layout tiles horizontal vertical'
 alt-e = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
+# Navigation in a workspace
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
+# Moving a window in a workspace
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
@@ -60,6 +64,7 @@ alt-shift-l = 'move right'
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+# Available workspaces
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
@@ -72,6 +77,7 @@ alt-9 = 'workspace 9'
 alt-b = 'workspace B'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+# Moving windows to different workspaces
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -87,32 +93,39 @@ alt-shift-b = 'move-node-to-workspace B'
 alt-m = 'move-node-to-monitor next'
 alt-shift-m = 'move-node-to-monitor prev'
 
-# My cusomized settings
+# Pop out of the windows managements (floating)
 alt-enter = ['layout floating tiling', 'mode main']
 
+# Fullscreen a window
 alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+# To navigate between workspaces and/or monitors
 alt-tab = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
+# Switch to service mode
 alt-shift-semicolon = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
+
+# Back to main mode esacpe service mode
 esc = 'mode main'
 
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+# Adjusting the size of a window
 alt-shift-minus = 'resize height -50'
 alt-shift-equal = 'resize height +50'
 alt-minus = 'resize width -50'
 alt-equal = 'resize width +50'
 
+# To join windows (verticality)
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
